@@ -8,7 +8,7 @@ RUN mkdir -p /go/src/github.com/codefresh-io/am-event-handler/
 COPY vendor ./vendor/
 COPY cmd ./cmd/
 
-RUN CGO_ENABLED=0 go build -o /usr/local/bin/am-event-handler . && \
+RUN CGO_ENABLED=0 go build -o /usr/local/bin/am-event-handler ./cmd && \
     rm -rf /go/* && \
     chmod +x /usr/local/bin/am-event-handler
 
